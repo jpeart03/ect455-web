@@ -68,15 +68,15 @@ nav.navbar .container .navbar-toggler {
     object-fit: cover;
 }
 
-.row.margin--bottom {
-    margin-bottom: 2em;
+.row.padding--bottom {
+    padding-bottom: 2em;
 }
 
 @media(max-width: 768px) { 
-    .row.margin--bottom {
-        margin-bottom: 0;
+    .row.padding--bottom {
+        padding-bottom: 0;
     }
     .col-md-4 {
-        margin-bottom: 2em;
+        padding-bottom: 2em;
     }
 }

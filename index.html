@@ -120,10 +120,11 @@
         </div>
     </main>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const downloadFileName = document.getElementsByClassName("download-file");
-            const today = new Date();
-            const todayFormatted = (date) => {
+        $(function() {
+            // function to get today's date and append it to downloaded file
+            $('.download-file').click(e => {
+                const clickedElement = $(e.currentTarget)[0];
+                const today = new Date();
                 const yyyy = today.getFullYear();
                 let dd = today.getDate();
                 let mm = today.getMonth() + 1;
@@ -137,12 +138,8 @@
 
                 formattedDateString = `${mm}-${dd}-${yyyy}`;
 
-                return formattedDateString;
-            }
-            // appending date to end of each download filename
-            for(const name of downloadFileName) {
-                name.download+= `_${todayFormatted()}`;
-            }
+                clickedElement.download+= `_${formattedDateString}`;
+            })
         });
     </script>
 </body>

@@ -72,6 +72,10 @@ nav.navbar .container .navbar-toggler {
     padding-bottom: 2em;
 }
 
+i.fas.fa-download {
+    padding-right: .5em;
+}
+
 @media(max-width: 768px) { 
     .row.padding--bottom {
         padding-bottom: 0;

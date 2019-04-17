@@ -10,6 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 <body>
 
@@ -49,7 +50,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Deliverable A</h5>
                                     <p class="card-text">Team organization statement.</p>
-                                    <a href="#" class="btn btn-secondary">Download</a>
+                                    <a href="#" class="btn btn-secondary download-file" download="western_deliverableA"><i class="fas fa-download"></i>Download</a>
                                 </div>
                             </div>
                         </div>
@@ -58,7 +59,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Deliverable B</h5>
                                     <p class="card-text">Business case statement.</p>
-                                    <a href="#" class="btn btn-secondary">Download</a>
+                                    <a href="#" class="btn btn-secondary download-file" download="western_deliverableB"><i class="fas fa-download"></i>Download</a>
                                 </div>
                             </div>
                         </div>
@@ -67,7 +68,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Deliverable C</h5>
                                     <p class="card-text">Requirements analysis &amp; specification.</p>
-                                    <a href="#" class="btn btn-secondary">Download</a>
+                                    <a href="#" class="btn btn-secondary download-file" download="western_deliverableC"><i class="fas fa-download"></i>Download</a>
                                 </div>
                             </div>
                         </div>
@@ -79,7 +80,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Deliverable D</h5>
                                     <p class="card-text">Detailed design.</p>
-                                    <a href="#" class="btn btn-secondary">Download</a>
+                                    <a href="#" class="btn btn-secondary download-file" download="western_deliverableD"><i class="fas fa-download"></i>Download</a>
                                 </div>
                             </div>
                         </div>
@@ -88,7 +89,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Deliverable E</h5>
                                     <p class="card-text">Technical &amp; budget feasibility report.</p>
-                                    <a href="#" class="btn btn-secondary">Download</a>
+                                    <a href="#" class="btn btn-secondary download-file" download="western_deliverableE"><i class="fas fa-download"></i>Download</a>
                                 </div>
                             </div>
                         </div>
@@ -97,7 +98,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Deliverable F</h5>
                                     <p class="card-text">Project web site &amp; presentation.</p>
-                                    <a href="#" class="btn btn-secondary">Download</a>
+                                    <a href="#" class="btn btn-secondary download-file" download="western_deliverableF"><i class="fas fa-download"></i>Download</a>
                                 </div>
                             </div>
                         </div>
@@ -109,7 +110,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Deliverable G</h5>
                                     <p class="card-text">Project documentation.</p>
-                                    <a href="#" class="btn btn-secondary">Download</a>
+                                    <a href="#" class="btn btn-secondary download-file" download="western_deliverableG"><i class="fas fa-download"></i>Download</a>
                                 </div>
                             </div>
                         </div>
@@ -118,7 +119,31 @@
             </div>
         </div>
     </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const downloadFileName = document.getElementsByClassName("download-file");
+            const today = new Date();
+            const todayFormatted = (date) => {
+                const yyyy = today.getFullYear();
+                let dd = today.getDate();
+                let mm = today.getMonth() + 1;
+                let formattedDateString = '';
 
+                if (dd < 10)
+                    dd = '0' + dd;
 
+                if (mm < 10)
+                    mm = '0' + mm;
+
+                formattedDateString = `${mm}-${dd}-${yyyy}`;
+
+                return formattedDateString;
+            }
+            // appending date to end of each download filename
+            for(const name of downloadFileName) {
+                name.download+= `_${todayFormatted()}`;
+            }
+        });
+    </script>
 </body>
 </html>

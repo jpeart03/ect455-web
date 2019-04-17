@@ -50,11 +50,27 @@ nav.navbar .container .navbar-toggler {
     padding: 0;
     box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.25)
 }
-.deliverables__header {
+.deliverables__header,
+.bio__header,
+.bio__container {
     box-sizing: border-box;
     padding: 2em 1em;
 }
-.deliverables__header h1 {
+
+.bio__container {
+    margin: 1em 1em;
+    border-left: 5px solid var(--linen);
+    background: #f8f8f8;
+}
+.bio__container:nth-of-type(n+3) {
+    margin-top: 2em;
+}
+.bio__container:nth-of-type(5) {
+    margin-bottom: 4em;
+}
+
+.deliverables__header h1,
+.bio__header h1 {
     border-bottom: 3px solid var(--fawn); 
     display: inline-block;
 }
